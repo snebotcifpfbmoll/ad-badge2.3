@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${DBNERD_MYSQL_URL:jdbc:mysql://localhost:3306/dbnerd_1}
+    username: ${DBNERD_MYSQL_USER:dbnerd}
+    password: ${DBNERD_MYSQL_PASSWORD:dbnerd}
+  jpa:
+    database: mysql
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.yml

@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create_contact_book"
+      author: "dbnerd-3"
+      changes:
+        - createTable:
+            tableName: "contact_book"
+            columns:
+              - column:
+                  name: "id"
+                  type: "INTEGER"
+                  constraints:
+                    - primaryKey: "true"
+              - column:
+                  name: "name"
+                  type: "VARCHAR(255)"
+        - createTable:
+            tableName: "contact"
+            columns:
+              - column:
+                  name: "id"
+                  type: "INTEGER"
+                  constraints:
+                    - primaryKey: "true"
+              - column:
+                  name: "name"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "last_name"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "email"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "address"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "phone"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "contact_book_id"
+                  type: "INTEGER"
+                  constraints:
+                    foreignKeyName: "fk_contact_book"
+                    references: "contact_book(id)"
+                    onDelete: "CASCADE"

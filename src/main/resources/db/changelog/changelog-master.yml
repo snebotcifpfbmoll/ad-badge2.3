@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/create-csvrecord.yml
+  - include:
+      file: classpath:db/changelog/create-contact-book.yml

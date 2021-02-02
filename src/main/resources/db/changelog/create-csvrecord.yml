@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: "create_csvrecord"
+      author: "dbnerd-3"
+      changes:
+        - createTable:
+            tableName: "csv_record"
+            columns:
+              - column:
+                  name: "id"
+                  type: "INTEGER"
+                  constraints:
+                    - primaryKey: "true"
+              - column:
+                  name: "name"
+                  type: "VARCHAR(255)"
+              - column:
+                  name: "value_separator"
+                  type: "CHAR"
+              - column:
+                  name: "line_separator"
+                  type: "CHAR"
+              - column:
+                  name: "text_separator"
+                  type: "CHAR"
+              - column:
+                  name: "first_line_as_name"
+                  type: "BOOL"
+              - column:
+                  name: "lowercase_tags"
+                  type: "BOOL"
+              - column:
+                  name: "content"
+                  type: "VARCHAR(1024)"
